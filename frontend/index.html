@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud File Storage – AWS Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>☁️ Cloud File Storage</h1>
+    <p>Powered by AWS S3 · DynamoDB · Lambda · API Gateway</p>
+    <span class="badge">Free Tier</span>
+  </header>
+
+  <main>
+    <!-- Upload Card -->
+    <section class="card" id="upload-section">
+      <h2>Upload a File</h2>
+
+      <div class="form-group">
+        <label for="fileName">File Name</label>
+        <input type="text" id="fileName" placeholder="e.g. resume.pdf" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" placeholder="Brief description of the file" />
+      </div>
+
+      <div class="form-group">
+        <label for="fileInput">Choose File</label>
+        <input type="file" id="fileInput" />
+      </div>
+
+      <button id="uploadBtn" onclick="uploadFile()">⬆ Upload to Cloud</button>
+      <div id="statusMsg" class="status-msg"></div>
+    </section>
+
+    <!-- Files Table -->
+    <section class="card" id="files-section">
+      <div class="table-header">
+        <h2>Uploaded Files</h2>
+        <button onclick="loadFiles()">🔄 Refresh</button>
+      </div>
+
+      <div class="table-wrap">
+        <table id="filesTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>File Name</th>
+              <th>Description</th>
+              <th>Upload Date</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr><td colspan="5" class="empty">No files yet. Upload one above!</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built by <strong>Manikanta Naripeddi</strong> · B.Tech CSE – Cloud Technology &amp; Information Security</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
